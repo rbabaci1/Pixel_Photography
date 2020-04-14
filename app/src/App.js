@@ -5,19 +5,20 @@ import Header from './components/Header';
 import LoadingButton from './LoadingButton/LoadingButton';
 import Gallery from './components/Gallery';
 
-function App({ fetchAllPictures, loading, error }) {
+function App({ fetchAllPictures, loading }) {
   return (
     <div className='App'>
       <Header />
 
       <div className='show-all'>
         <LoadingButton onClick={fetchAllPictures} loading={loading} />
-        {error && <p>{error}</p>}
       </div>
+
+      <Gallery />
     </div>
   );
 }
 
-const mapStateToProps = ({ loading, error }) => ({ loading, error });
+const mapStateToProps = ({ loading }) => ({ loading });
 
 export default connect(mapStateToProps, { fetchAllPictures })(App);

@@ -1,5 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default function Gallery() {
-  return <div className='gallery'></div>;
+function Gallery({ pictures, error }) {
+  return error ? <p>{error}</p> : <div className='gallery'></div>;
 }
+
+const mapStateToProps = ({ pictures, error }) => ({ pictures, error });
+
+export default connect(mapStateToProps)(Gallery);
