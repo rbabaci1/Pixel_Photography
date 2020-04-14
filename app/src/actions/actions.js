@@ -11,10 +11,12 @@ export const fetchAllPictures = () => (dispatch) => {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      dispatch({
-        type: SUCCESS,
-        payload: data.hits,
-      });
+      setTimeout(() => {
+        dispatch({
+          type: SUCCESS,
+          payload: data.hits,
+        });
+      }, 2500);
     })
     .catch((error) => {
       dispatch({
