@@ -17,16 +17,18 @@ code {
   text-align: center;
 
   button {
-    font-size: 24px;
+    font-size: 20px;
     padding: 3px 20px;
+    margin-top: 10px;
     cursor: pointer;
     outline: none;
+    color: rgb(78, 76, 76);
   }
 }
 
 .header {
   h1 {
-    margin: 10px 0;
+    margin: 10px 0 0 0;
     padding: 10px 0;
     text-align: center;
     font-size: 52px;
@@ -35,6 +37,7 @@ code {
     background-color: rgb(250, 229, 189);
   }
 }
-.ColoredLinearProgress-colorPrimary-43 {
+
+.ColoredLinearProgress-colorPrimary-1 {
   margin: 2px 0;
 }

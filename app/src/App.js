@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { fetchAllPictures } from './actions/actions';
 import Header from './components/Header';
 import LoadingButton from './LoadingButton/LoadingButton';
 
-function App({ test, fetchAllPictures }) {
+function App({ fetchAllPictures }) {
+  const [test, set] = useState(true);
+
+  setTimeout(() => {
+    set(false);
+  }, 3000);
   return (
     <div className='App'>
       <Header />
 
       <div className='show-all'>
-        <button onClick={fetchAllPictures}>Show All</button>
+        <LoadingButton onClick={fetchAllPictures} loading={test} />
       </div>
-
-      <LoadingButton />
     </div>
   );
 }

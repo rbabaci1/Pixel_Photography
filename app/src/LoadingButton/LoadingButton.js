@@ -1,23 +1,22 @@
 import React from 'react';
-import { render } from 'react-dom';
 import { CircularProgress, Button } from '@material-ui/core';
 import ColoredLinearProgress from './LineProgress';
 
-function ButtonComponent({ loading }) {
+function ButtonComponent({ loading, onClick }) {
   return (
-    <Button variant='contained' disabled={loading}>
+    <Button variant='contained' disabled={loading} onClick={onClick}>
       {loading && <CircularProgress size={14} />}
       {!loading && 'Show All'}
     </Button>
   );
 }
 
-const LoadingButton = ({ loading }) => {
+const LoadingButton = ({ loading, onClick }) => {
   return (
     <React.Fragment>
       {loading && <ColoredLinearProgress />}
-      <br />
-      <ButtonComponent loading={loading} />
+
+      <ButtonComponent loading={loading} onClick={onClick} />
     </React.Fragment>
   );
 };
