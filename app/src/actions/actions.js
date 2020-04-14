@@ -1,9 +1,11 @@
-export const FETCH_ALL_PICTURES = 'FETCH_ALL_PICTURES';
+export const LOADING = 'LOADING';
+export const SUCCESS = 'SUCCESS';
+export const ERROR = 'ERROR';
+
 const url = 'https://pixabay.com/api/?key=14685436-4a2efb015ccaa4b983c6b66ae';
 
-export const fetchAllPictures = () => {
-  return {
-    type: FETCH_ALL_PICTURES,
-    payload: 'test pictures',
-  };
+export const fetchAllPictures = () => (dispatch) => {
+  dispatch({
+    type: LOADING,
+  });
 };
