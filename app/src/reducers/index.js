@@ -5,7 +5,6 @@ const initialState = {
   pictures: [],
   error: false,
   isLoading: false,
-  test: '',
 };
 
 const reducer = (state = initialState, { type, payload }) => {

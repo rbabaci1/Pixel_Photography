@@ -1,25 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchAllPictures } from './actions/actions';
+import Header from './components/Header';
 
 function App({ test, fetchAllPictures }) {
   return (
     <div className='App'>
-      <h1>Pixels Photography</h1>
+      <Header />
 
-      <button onClick={fetchAllPictures} style={{ fontSize: '26px' }}>
-        Test store
-      </button>
+      <button onClick={fetchAllPictures}>Show All</button>
 
       {test && <h2>Store connected. {test}</h2>}
     </div>
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    test: state.test,
-  };
-};
-
-export default connect(mapStateToProps, { fetchAllPictures })(App);
+export default App;
