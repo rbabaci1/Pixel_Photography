@@ -18,10 +18,11 @@ export const fetchAllPictures = () => (dispatch) => {
         });
       }, 2500);
     })
-    .catch((error) => {
+    .catch((err) => {
       dispatch({
         type: ERROR,
-        payload: error,
+        payload: 'Request failed, please try again!',
       });
+      console.error(err);
     });
 };

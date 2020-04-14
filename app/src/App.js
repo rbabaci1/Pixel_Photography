@@ -4,18 +4,19 @@ import { fetchAllPictures } from './actions/actions';
 import Header from './components/Header';
 import LoadingButton from './LoadingButton/LoadingButton';
 
-function App({ fetchAllPictures, loading }) {
+function App({ fetchAllPictures, loading, error }) {
   return (
     <div className='App'>
       <Header />
 
       <div className='show-all'>
         <LoadingButton onClick={fetchAllPictures} loading={loading} />
+        {error && <p>{error}</p>}
       </div>
     </div>
   );
 }
 
-const mapStateToProps = ({ loading }) => ({ loading });
+const mapStateToProps = ({ loading, error }) => ({ loading, error });
 
 export default connect(mapStateToProps, { fetchAllPictures })(App);
