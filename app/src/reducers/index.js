@@ -21,6 +21,12 @@ const reducer = (state = initialState, { type, payload }) => {
         loading: false,
         pictures: payload,
       };
+    case ERROR:
+      return {
+        ...state,
+        loading: false,
+        error: payload,
+      };
     default:
       return state;
   }
