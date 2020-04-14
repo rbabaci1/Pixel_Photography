@@ -1,6 +1,6 @@
 const initialState = {
   searchTerm: '',
-  photos: [],
+  pictures: [],
   error: false,
   isLoading: false,
 };
