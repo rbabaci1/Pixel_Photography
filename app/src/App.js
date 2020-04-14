@@ -2,15 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchAllPictures } from './actions/actions';
 import Header from './components/Header';
+import LoadingButton from './LoadingButton/LoadingButton';
 
 function App({ test, fetchAllPictures }) {
   return (
     <div className='App'>
       <Header />
 
-      <button onClick={fetchAllPictures}>Show All</button>
+      <div className='show-all'>
+        <button onClick={fetchAllPictures}>Show All</button>
+      </div>
 
-      {test && <h2>Store connected. {test}</h2>}
+      <LoadingButton />
     </div>
   );
 }

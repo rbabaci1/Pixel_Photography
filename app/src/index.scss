@@ -13,6 +13,17 @@ code {
     monospace;
 }
 
+.show-all {
+  text-align: center;
+
+  button {
+    font-size: 24px;
+    padding: 3px 20px;
+    cursor: pointer;
+    outline: none;
+  }
+}
+
 .header {
   h1 {
     margin: 10px 0;
@@ -23,4 +34,7 @@ code {
     border-bottom: 2px dashed;
     background-color: rgb(250, 229, 189);
   }
+}
+.ColoredLinearProgress-colorPrimary-43 {
+  margin: 2px 0;
 }
