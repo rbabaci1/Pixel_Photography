@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchAllPictures } from './actions/actions';
 import Header from './components/Header';
 import LoadingButton from './LoadingButton/LoadingButton';
+import Gallery from './components/Gallery';
 
 function App({ fetchAllPictures, loading, error }) {
   return (
