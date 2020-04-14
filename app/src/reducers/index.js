@@ -3,7 +3,7 @@ import { LOADING, SUCCESS, ERROR } from '../actions/actions';
 const initialState = {
   searchTerm: '',
   pictures: [],
-  error: false,
+  error: '',
   loading: false,
 };
 
@@ -12,7 +12,8 @@ const reducer = (state = initialState, { type, payload }) => {
     case LOADING:
       return {
         ...state,
-        test: payload,
+        loading: true,
+        error: '',
       };
     default:
       return state;
