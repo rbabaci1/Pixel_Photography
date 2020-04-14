@@ -15,4 +15,4 @@ function App({ test, fetchAllPictures }) {
   );
 }
 
-export default App;
+export default connect(null, { fetchAllPictures })(App);
