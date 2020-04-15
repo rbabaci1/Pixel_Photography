@@ -28,10 +28,10 @@ class ColoredLinearProgress extends Component {
 
 const styles = {
   colorPrimary: {
-    backgroundColor: 'gray',
+    backgroundColor: '#e8eaf6',
   },
   barColorPrimary: {
-    backgroundColor: 'wheat',
+    backgroundColor: '#03a9f4',
   },
 };
 
