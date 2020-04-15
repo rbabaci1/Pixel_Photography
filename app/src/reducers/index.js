@@ -1,4 +1,4 @@
-import { LOADING, SUCCESS, ERROR } from '../actions/actions';
+import { LOADING, SUCCESS, ERROR } from '../actions';
 
 const initialState = {
   searchTerm: '',
