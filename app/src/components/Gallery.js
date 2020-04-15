@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ImageCard from './ImageCard';
+import { NavLink } from 'react-router-dom';
 
 function Gallery({ images, error }) {
   return error ? (
