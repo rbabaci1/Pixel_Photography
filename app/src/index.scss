@@ -12,6 +12,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.App {
+  border: 1px solid;
+  box-sizing: border-box;
+  height: 100vh;
+}
 
 .show-all {
   text-align: center;
