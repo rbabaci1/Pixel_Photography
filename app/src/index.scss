@@ -20,7 +20,7 @@ code {
 
 .header {
   h1 {
-    margin: 10px 0 0 0;
+    margin: 0;
     padding: 10px 0;
     text-align: center;
     font-size: 52px;
@@ -33,9 +33,10 @@ code {
 .home {
   .show-all {
     text-align: center;
+    margin-top: 30px;
 
     button {
-      font-size: 20px;
+      font-size: 18px;
       padding: 3px 20px;
       margin-top: 10px;
       cursor: pointer;
