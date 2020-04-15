@@ -1,5 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default function SearchForm() {
-  return <form></form>;
+function SearchForm({ searchTerm }) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  return (
+    <form>
+      <label>
+        {'🔍'}
+        <input type='text' />
+      </label>
+    </form>
+  );
 }
+
+const mapStateToProps = ({ searchTerm }) => ({ searchTerm });
+
+export default connect(mapStateToProps)(SearchForm);
