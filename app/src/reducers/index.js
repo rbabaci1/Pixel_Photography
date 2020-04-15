@@ -1,8 +1,7 @@
-import { LOADING, SUCCESS, ERROR, SEARCH_IMAGE } from '../actions';
+import { LOADING, SUCCESS, ERROR } from '../actions';
 
 const initialState = {
-  storedImages: [],
-  displayedImages: [],
+  images: [],
   error: '',
   loading: false,
 };
@@ -19,19 +18,13 @@ const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         loading: false,
-        storedImages: payload,
-        displayedImages: payload,
+        images: payload,
       };
     case ERROR:
       return {
         ...state,
         loading: false,
         error: payload,
-      };
-    case SEARCH_IMAGE:
-      return {
-        ...state,
-        displayedImages: payload,
       };
     default:
       return state;

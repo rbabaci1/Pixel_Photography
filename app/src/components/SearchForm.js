@@ -1,20 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { searchImage } from '../actions';
+import { fetchAllImages } from '../actions';
 
-function SearchForm({ storedImages, searchImage }) {
+function SearchForm({ fetchAllImages }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  };
-  useEffect(() => {
-    const filteredImages = storedImages.filter((image) =>
-      image.tags.toLowerCase().includes(searchTerm.toLowerCase())
-    );
 
-    searchImage(filteredImages);
-  }, [searchTerm]);
+    fetchAllImages(
+      `https://pixabay.com/api/?key=14685436-4a2efb015ccaa4b983c6b66ae&per_page=200&page=1&q=${searchTerm}`
+    );
+    setSearchTerm('');
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -30,6 +28,4 @@ function SearchForm({ storedImages, searchImage }) {
   );
 }
 
-const mapStateToProps = ({ storedImages }) => ({ storedImages });
-
-export default connect(mapStateToProps, { searchImage })(SearchForm);
+export default connect(null, { fetchAllImages })(SearchForm);

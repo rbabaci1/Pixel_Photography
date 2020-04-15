@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import ImageCard from './ImageCard';
 import SearchForm from './SearchForm';
 
-function Gallery({ displayedImages, error }) {
+function Gallery({ images, error }) {
   return error ? (
     <p style={{ textAlign: 'center', color: 'red' }}>{error}</p>
   ) : (
@@ -12,7 +12,7 @@ function Gallery({ displayedImages, error }) {
       <SearchForm />
 
       <div className='gallery'>
-        {displayedImages.map((image) => (
+        {images.map((image) => (
           <ImageCard key={image.id} imageUrl={image.largeImageURL} />
         ))}
       </div>
@@ -20,8 +20,8 @@ function Gallery({ displayedImages, error }) {
   );
 }
 
-const mapStateToProps = ({ displayedImages, error }) => ({
-  displayedImages,
+const mapStateToProps = ({ images, error }) => ({
+  images,
   error,
 });
 
