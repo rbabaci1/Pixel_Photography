@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { filterImages } from '../actions';
 
-function SearchForm({ searchTerm }) {
+function SearchForm({ searchTerm, filterImages }) {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -18,4 +19,4 @@ function SearchForm({ searchTerm }) {
 
 const mapStateToProps = ({ searchTerm }) => ({ searchTerm });
 
-export default connect(mapStateToProps)(SearchForm);
+export default connect(mapStateToProps, { filterImages })(SearchForm);
