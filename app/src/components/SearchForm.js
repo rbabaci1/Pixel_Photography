@@ -10,7 +10,8 @@ function SearchForm({ fetchAllImages, loading }) {
     e.preventDefault();
 
     fetchAllImages(
-      `https://pixabay.com/api/?key=14685436-4a2efb015ccaa4b983c6b66ae&per_page=200&page=1&q=${searchTerm}`
+      `https://pixabay.com/api/?key=14685436-4a2efb015ccaa4b983c6b66ae&per_page=200&page=1&q=${searchTerm}`,
+      1000
     );
     setSearchTerm('');
   };

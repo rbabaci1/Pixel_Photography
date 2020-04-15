@@ -72,6 +72,29 @@ code {
       margin-right: 10px;
     }
   }
+
+  .categories {
+    margin: 0 15px;
+    display: flex;
+
+    p {
+      font-size: 22px;
+      margin: 10px 30px 10px 0;
+      color: #b3b0b0;
+      cursor: pointer;
+      transition-duration: 0.4s;
+
+      &:hover {
+        color: #f7f7f7;
+      }
+    }
+    a {
+      color: #fff;
+    }
+    .active {
+      color: red;
+    }
+  }
 }
 
 .header {

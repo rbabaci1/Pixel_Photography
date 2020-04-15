@@ -10,7 +10,8 @@ function Home({ loading, fetchAllImages, history }) {
         <LoadingButton
           onClick={() =>
             fetchAllImages(
-              'https://pixabay.com/api/?key=14685436-4a2efb015ccaa4b983c6b66ae&per_page=200&page=1'
+              'https://pixabay.com/api/?key=14685436-4a2efb015ccaa4b983c6b66ae&per_page=200&page=1',
+              2000
             )
           }
           loading={loading}

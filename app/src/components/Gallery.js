@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { NavLink } from 'react-router-dom';
 import ImageCard from './ImageCard';
 import SearchForm from './SearchForm';
+import Categories from './Categories';
 
 function Gallery({ images, error }) {
   return error ? (
@@ -10,6 +10,8 @@ function Gallery({ images, error }) {
   ) : (
     <>
       <SearchForm />
+
+      <Categories />
 
       <div className='gallery'>
         {images.map((image) => (
