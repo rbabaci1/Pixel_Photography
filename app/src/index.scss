@@ -18,19 +18,6 @@ code {
   height: 100vh;
 }
 
-.show-all {
-  text-align: center;
-
-  button {
-    font-size: 20px;
-    padding: 3px 20px;
-    margin-top: 10px;
-    cursor: pointer;
-    outline: none;
-    color: rgb(78, 76, 76);
-  }
-}
-
 .header {
   h1 {
     margin: 10px 0 0 0;
@@ -43,6 +30,21 @@ code {
   }
 }
 
-.MuiLinearProgress-colorPrimary {
-  margin: 2px 0;
+.home {
+  .show-all {
+    text-align: center;
+
+    button {
+      font-size: 20px;
+      padding: 3px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      outline: none;
+      color: rgb(78, 76, 76);
+    }
+  }
+
+  .MuiLinearProgress-colorPrimary {
+    margin: 2px 0;
+  }
 }
