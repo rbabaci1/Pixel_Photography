@@ -1,22 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { filterImages } from '../actions';
 
-function SearchForm({ searchTerm, filterImages }) {
+function SearchForm({ filterImages }) {
+  const [searchTerm, setSearchTerm] = useState('');
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    filterImages(searchTerm);
+    setSearchTerm('');
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label>
         {'🔍'}
-        <input type='text' />
+        <input
+          type='text'
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </label>
     </form>
   );
 }
 
-const mapStateToProps = ({ searchTerm }) => ({ searchTerm });
-
-export default connect(mapStateToProps, { filterImages })(SearchForm);
+export default connect(null, { filterImages })(SearchForm);

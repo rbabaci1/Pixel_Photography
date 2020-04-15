@@ -1,7 +1,6 @@
 import { LOADING, SUCCESS, ERROR } from '../actions';
 
 const initialState = {
-  searchTerm: '',
   images: [],
   error: '',
   loading: false,
