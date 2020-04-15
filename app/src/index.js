@@ -5,16 +5,15 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { createStore, applyMiddleware, subscribe } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 import thunk from 'redux-thunk';
+import persistState from 'redux-localstorage';
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const enhancer = compose(applyMiddleware(thunk), persistState());
 
-store.subscribe(() => {
-  console.log(store.getState());
-});
+const store = createStore(rootReducer, enhancer);
 
 ReactDOM.render(
   <React.StrictMode>

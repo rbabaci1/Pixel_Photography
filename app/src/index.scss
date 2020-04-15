@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(250, 241, 223);
+  background-color: rgb(54, 54, 53);
 }
 
 code {
@@ -13,9 +13,22 @@ code {
     monospace;
 }
 .App {
-  border: 1px solid;
-  box-sizing: border-box;
-  height: 100vh;
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: rgb(14, 13, 13);
+
+    .image-card {
+      margin: 10px;
+
+      img {
+        width: 600px;
+        height: 400px;
+        border-radius: 10px;
+      }
+    }
+  }
 }
 
 .header {

@@ -1,14 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import ImageCard from './ImageCard';
 
-function Gallery({ pictures, error }) {
+function Gallery({ images, error }) {
   return error ? (
     <p style={{ textAlign: 'center', color: 'red' }}>{error}</p>
   ) : (
-    <div className='gallery'></div>
+    <div className='gallery'>
+      {images.map((image) => (
+        <ImageCard key={image.id} imageUrl={image.largeImageURL} />
+      ))}
+    </div>
   );
 }
 
-const mapStateToProps = ({ pictures, error }) => ({ pictures, error });
+const mapStateToProps = ({ images, error }) => ({ images, error });
 
 export default connect(mapStateToProps)(Gallery);

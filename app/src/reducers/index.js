@@ -2,7 +2,7 @@ import { LOADING, SUCCESS, ERROR } from '../actions';
 
 const initialState = {
   searchTerm: '',
-  pictures: [],
+  images: [],
   error: '',
   loading: false,
 };
@@ -19,7 +19,7 @@ const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         loading: false,
-        pictures: payload,
+        images: payload,
       };
     case ERROR:
       return {
