@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchAllImages } from '../actions';
+import { fetchAllImages } from '../../actions';
+import Select from './Select';
 
 function Categories({ fetchAllImages }) {
   return (
@@ -25,6 +26,8 @@ function Categories({ fetchAllImages }) {
       >
         Latest
       </p>
+
+      <Select />
     </div>
   );
 }

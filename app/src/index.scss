@@ -29,7 +29,7 @@ code {
         width: 445px;
         height: 300px;
         border-radius: 10px;
-        transition-duration: 0.2s;
+        transition-duration: 0.3s;
 
         &:hover {
           transform: scale(1.1);
@@ -76,6 +76,8 @@ code {
   .categories {
     margin: 0 15px;
     display: flex;
+    align-items: center;
+    justify-content: center;
 
     p {
       font-size: 22px;
@@ -87,12 +89,6 @@ code {
       &:hover {
         color: #f7f7f7;
       }
-    }
-    a {
-      color: #fff;
-    }
-    .active {
-      color: red;
     }
   }
 }

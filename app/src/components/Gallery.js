@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ImageCard from './ImageCard';
 import SearchForm from './SearchForm';
-import Categories from './Categories';
+import Categories from './Categories/Categories';
 
 function Gallery({ images, error }) {
   return error ? (

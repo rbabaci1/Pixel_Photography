@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchAllImages } from '../actions';
-import LoadingButton from '../LoadingButton/LoadingButton';
+import LoadingButton from './LoadingButton/LoadingButton';
 
 function Home({ loading, fetchAllImages, history }) {
   return (
