@@ -1,20 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import ImageCard from './ImageCard';
 import SearchForm from './SearchForm';
 
-function Gallery({ images, error }) {
-  const [currentlyDisplayed, setCurrentlyDisplayed] = useState([...images]);
-
+function Gallery({ displayedImages, error }) {
   return error ? (
     <p style={{ textAlign: 'center', color: 'red' }}>{error}</p>
   ) : (
     <>
-      <SearchForm setCurrentlyDisplayed={setCurrentlyDisplayed} />
+      <SearchForm />
 
       <div className='gallery'>
-        {currentlyDisplayed.map((image) => (
+        {displayedImages.map((image) => (
           <ImageCard key={image.id} imageUrl={image.largeImageURL} />
         ))}
       </div>
@@ -22,6 +20,9 @@ function Gallery({ images, error }) {
   );
 }
 
-const mapStateToProps = ({ images, error }) => ({ images, error });
+const mapStateToProps = ({ displayedImages, error }) => ({
+  displayedImages,
+  error,
+});
 
 export default connect(mapStateToProps)(Gallery);

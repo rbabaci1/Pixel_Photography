@@ -9,11 +9,3 @@ export const cleanData = (images) =>
       tags: image.tags.split(',').join(''),
     };
   });
-
-export const filterImages = (images, searchTerm) => {
-  const filteredImages = images.filter((image) =>
-    image.tags.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  return filteredImages;
-};
