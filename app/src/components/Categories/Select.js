@@ -28,40 +28,38 @@ export default function SimpleSelect() {
   };
 
   return (
-    <div>
-      <FormControl className={classes.formControl}>
-        <InputLabel id='demo-simple-select-helper-label'>Category</InputLabel>
+    <FormControl className={classes.formControl}>
+      <InputLabel id='demo-simple-select-helper-label'>Category</InputLabel>
 
-        <Select
-          labelId='demo-simple-select-helper-label'
-          id='demo-simple-select-helper'
-          value={category}
-          onChange={handleChange}
-        >
-          <MenuItem disabled>Select a category</MenuItem>
+      <Select
+        labelId='demo-simple-select-helper-label'
+        id='demo-simple-select-helper'
+        value={category}
+        onChange={handleChange}
+      >
+        <MenuItem disabled>Select a category</MenuItem>
 
-          <MenuItem value='backgrounds'>Backgrounds</MenuItem>
-          <MenuItem value='fashion'>Fashion</MenuItem>
-          <MenuItem value='nature'>Nature</MenuItem>
-          <MenuItem value='science'>Science</MenuItem>
-          <MenuItem value='education'>Education</MenuItem>
-          <MenuItem value='feelings'>Feelings</MenuItem>
-          <MenuItem value='health'>Health</MenuItem>
-          <MenuItem value='people'>People</MenuItem>
-          <MenuItem value='religion'>Religion</MenuItem>
-          <MenuItem value='places'>Places</MenuItem>
-          <MenuItem value='animals'>Animals</MenuItem>
-          <MenuItem value='industry'>Industry</MenuItem>
-          <MenuItem value='computer'>Computer</MenuItem>
-          <MenuItem value='food'>Food</MenuItem>
-          <MenuItem value='sports'>Sports</MenuItem>
-          <MenuItem value='transportation'>Transportation</MenuItem>
-          <MenuItem value='travel'>Travel</MenuItem>
-          <MenuItem value='buildings'>Buildings</MenuItem>
-          <MenuItem value='business'>Business</MenuItem>
-          <MenuItem value='music'>Music</MenuItem>
-        </Select>
-      </FormControl>
-    </div>
+        <MenuItem value='backgrounds'>Backgrounds</MenuItem>
+        <MenuItem value='fashion'>Fashion</MenuItem>
+        <MenuItem value='nature'>Nature</MenuItem>
+        <MenuItem value='science'>Science</MenuItem>
+        <MenuItem value='education'>Education</MenuItem>
+        <MenuItem value='feelings'>Feelings</MenuItem>
+        <MenuItem value='health'>Health</MenuItem>
+        <MenuItem value='people'>People</MenuItem>
+        <MenuItem value='religion'>Religion</MenuItem>
+        <MenuItem value='places'>Places</MenuItem>
+        <MenuItem value='animals'>Animals</MenuItem>
+        <MenuItem value='industry'>Industry</MenuItem>
+        <MenuItem value='computer'>Computer</MenuItem>
+        <MenuItem value='food'>Food</MenuItem>
+        <MenuItem value='sports'>Sports</MenuItem>
+        <MenuItem value='transportation'>Transportation</MenuItem>
+        <MenuItem value='travel'>Travel</MenuItem>
+        <MenuItem value='buildings'>Buildings</MenuItem>
+        <MenuItem value='business'>Business</MenuItem>
+        <MenuItem value='music'>Music</MenuItem>
+      </Select>
+    </FormControl>
   );
 }

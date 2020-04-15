@@ -34,6 +34,7 @@ code {
         &:hover {
           transform: scale(1.1);
           box-shadow: 0px 0px 7px 1px rgb(216, 183, 40);
+          z-index: -99;
         }
       }
     }
@@ -45,7 +46,7 @@ code {
     align-items: center;
     background-color: rgb(15, 20, 22);
     padding: 15px 0;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgb(54, 54, 54);
 
     button {
       background: inherit;
@@ -74,20 +75,37 @@ code {
   }
 
   .categories {
-    margin: 0 15px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: lighten($color: rgb(15, 20, 22), $amount: 5);
 
     p {
       font-size: 22px;
-      margin: 10px 30px 10px 0;
       color: #b3b0b0;
       cursor: pointer;
       transition-duration: 0.4s;
 
       &:hover {
         color: #f7f7f7;
+      }
+    }
+
+    // Select style
+    .makeStyles-formControl-1 {
+      margin: 0;
+
+      label {
+        color: #78b8db;
+        font-size: 19px;
+        position: relative;
+      }
+      .MuiInput-formControl {
+        margin: 0 0 16px 0;
+      }
+      .MuiSelect-select.MuiSelect-select {
+        border-bottom: 1px solid #fff;
       }
     }
   }
@@ -115,7 +133,7 @@ code {
     margin: 0;
     top: 35px;
     font-weight: 400;
-    background-color: rgb(114, 113, 113);
+    background-color: rgba(114, 113, 113, 0.5);
     padding: 7px 10px;
     font-size: 20px;
     border-top-right-radius: 5px;
@@ -140,7 +158,6 @@ code {
 
   .show-all {
     text-align: center;
-
     margin-top: 20px;
 
     a {

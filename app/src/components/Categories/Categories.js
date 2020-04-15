@@ -16,6 +16,9 @@ function Categories({ fetchAllImages }) {
       >
         Popular
       </p>
+
+      <Select />
+
       <p
         onClick={() =>
           fetchAllImages(
@@ -26,8 +29,6 @@ function Categories({ fetchAllImages }) {
       >
         Latest
       </p>
-
-      <Select />
     </div>
   );
 }
