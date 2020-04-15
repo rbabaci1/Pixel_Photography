@@ -17,12 +17,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimpleSelect() {
+function SimpleSelect({ fetchAllImages }) {
   const classes = useStyles();
   const [category, setCategory] = useState('');
 
   useEffect(() => {
-    console.log(category);
+    fetchAllImages(
+      `https://pixabay.com/api/?key=14685436-4a2efb015ccaa4b983c6b66ae&per_page=200&page=1&category=${category}`,
+      0
+    );
   }, [category]);
 
   const handleChange = (event) => {
@@ -65,3 +68,5 @@ export default function SimpleSelect() {
     </FormControl>
   );
 }
+
+export default connect(null, { fetchAllImages })(SimpleSelect);
