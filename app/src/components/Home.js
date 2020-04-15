@@ -2,16 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchAllPictures } from '../actions';
 import LoadingButton from '../LoadingButton/LoadingButton';
-import Gallery from '../components/Gallery';
 
-function Home({ loading, fetchAllPictures }) {
+function Home({ loading, fetchAllPictures, history }) {
   return (
     <div className='home'>
       <div className='show-all'>
-        <LoadingButton onClick={fetchAllPictures} loading={loading} />
+        <LoadingButton
+          onClick={fetchAllPictures}
+          loading={loading}
+          history={history}
+        />
       </div>
-
-      <Gallery />
     </div>
   );
 }

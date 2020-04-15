@@ -1,22 +1,27 @@
 import React from 'react';
 import { CircularProgress, Button } from '@material-ui/core';
 import ColoredLinearProgress from './LineProgress';
+import { Link } from 'react-router-dom';
 
-function ButtonComponent({ loading, onClick }) {
-  return (
-    <Button variant='contained' disabled={loading} onClick={onClick}>
-      {loading && <CircularProgress size={14} />}
-      {!loading && 'Show All'}
-    </Button>
-  );
-}
+const LoadingButton = ({ loading, onClick, history }) => {
+  const handleClick = (e) => {
+    e.preventDefault();
 
-const LoadingButton = ({ loading, onClick }) => {
+    setTimeout(() => {
+      history.push('/gallery');
+    }, 2500);
+  };
+
   return (
     <React.Fragment>
       {loading && <ColoredLinearProgress />}
 
-      <ButtonComponent loading={loading} onClick={onClick} />
+      <Link to='/' onClick={handleClick}>
+        <Button variant='contained' disabled={loading} onClick={onClick}>
+          {loading && <CircularProgress size={14} />}
+          {!loading && 'Show All'}
+        </Button>
+      </Link>
     </React.Fragment>
   );
 };
