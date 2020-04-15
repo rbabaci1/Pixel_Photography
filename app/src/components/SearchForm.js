@@ -9,12 +9,10 @@ function SearchForm({ fetchAllImages, loading }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (searchTerm) {
-      fetchAllImages(
-        `https://pixabay.com/api/?key=14685436-4a2efb015ccaa4b983c6b66ae&per_page=200&page=1&q=${searchTerm}`
-      );
-      setSearchTerm('');
-    }
+    fetchAllImages(
+      `https://pixabay.com/api/?key=14685436-4a2efb015ccaa4b983c6b66ae&per_page=200&page=1&q=${searchTerm}`
+    );
+    setSearchTerm('');
   };
 
   return (
@@ -31,6 +29,8 @@ function SearchForm({ fetchAllImages, loading }) {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           disabled={loading}
+          placeholder='...Search'
+          required
         />
       </label>
 

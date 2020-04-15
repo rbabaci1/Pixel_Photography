@@ -6,6 +6,5 @@ export const cleanData = (images) =>
       likes: image.likes,
       views: image.views,
       downloads: image.downloads,
-      tags: image.tags.split(',').join(''),
     };
   });
