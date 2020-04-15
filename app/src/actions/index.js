@@ -1,21 +1,11 @@
+import { cleanData } from '../helpers';
+
 export const LOADING = 'LOADING';
 export const SUCCESS = 'SUCCESS';
 export const ERROR = 'ERROR';
-export const TYPING = 'TYPING';
+
 const url =
   'https://pixabay.com/api/?key=14685436-4a2efb015ccaa4b983c6b66ae&per_page=200';
-
-const cleanData = (images) =>
-  images.map((image) => {
-    return {
-      id: image.id,
-      largeImageURL: image.largeImageURL,
-      likes: image.likes,
-      views: image.views,
-      downloads: image.downloads,
-      tags: image.tags.split(',').join(''),
-    };
-  });
 
 export const fetchAllPictures = () => (dispatch) => {
   dispatch({
@@ -41,11 +31,4 @@ export const fetchAllPictures = () => (dispatch) => {
       });
       console.error(err);
     });
-};
-
-export const filterImages = (searchTerm) => {
-  return {
-    type: TYPING,
-    payload: searchTerm,
-  };
 };

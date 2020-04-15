@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { filterImages } from '../actions';
+import { searchImages } from '../actions';
 
-function SearchForm({ filterImages }) {
+function SearchForm({ setCurrentlyDisplayed, images }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    filterImages(searchTerm);
-    setSearchTerm('');
   };
+  useEffect(() => {
+    const filteredImages = images.filter((image) =>
+      image.tags.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    setCurrentlyDisplayed(filteredImages);
+  }, [searchTerm]);
 
   return (
     <form onSubmit={handleSubmit}>
@@ -25,4 +30,6 @@ function SearchForm({ filterImages }) {
   );
 }
 
-export default connect(null, { filterImages })(SearchForm);
+const mapStateToProps = ({ images }) => ({ images });
+
+export default connect(mapStateToProps)(SearchForm);
