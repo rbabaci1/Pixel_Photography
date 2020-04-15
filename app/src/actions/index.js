@@ -4,6 +4,18 @@ export const ERROR = 'ERROR';
 const url =
   'https://pixabay.com/api/?key=14685436-4a2efb015ccaa4b983c6b66ae&per_page=200';
 
+const cleanData = (images) =>
+  images.map((image) => {
+    return {
+      id: image.id,
+      largeImageURL: image.largeImageURL,
+      likes: image.likes,
+      views: image.views,
+      downloads: image.downloads,
+      tags: image.tags,
+    };
+  });
+
 export const fetchAllPictures = () => (dispatch) => {
   dispatch({
     type: LOADING,
@@ -12,11 +24,12 @@ export const fetchAllPictures = () => (dispatch) => {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      const cleanedData = cleanData(data.hits);
+
       setTimeout(() => {
         dispatch({
           type: SUCCESS,
-          payload: data.hits,
+          payload: cleanedData,
         });
       }, 2500);
     })
