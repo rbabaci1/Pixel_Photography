@@ -10,7 +10,7 @@ import { fetchAllImages } from '../../actions';
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120,
+    minWidth: 110,
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -26,7 +26,7 @@ function SimpleSelect({ fetchAllImages }) {
       `https://pixabay.com/api/?key=14685436-4a2efb015ccaa4b983c6b66ae&per_page=200&page=1&category=${category}`,
       0
     );
-  }, [category]);
+  }, [category, fetchAllImages]);
 
   const handleChange = (event) => {
     setCategory(event.target.value);
@@ -36,14 +36,8 @@ function SimpleSelect({ fetchAllImages }) {
     <FormControl className={classes.formControl}>
       <InputLabel id='demo-simple-select-helper-label'>Category</InputLabel>
 
-      <Select
-        labelId='demo-simple-select-helper-label'
-        id='demo-simple-select-helper'
-        value={category}
-        onChange={handleChange}
-      >
+      <Select value={category} onChange={handleChange}>
         <MenuItem disabled>Select a category</MenuItem>
-
         <MenuItem value='backgrounds'>Backgrounds</MenuItem>
         <MenuItem value='fashion'>Fashion</MenuItem>
         <MenuItem value='nature'>Nature</MenuItem>

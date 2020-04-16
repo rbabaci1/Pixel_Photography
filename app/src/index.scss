@@ -93,13 +93,18 @@ code {
     .makeStyles-formControl-1 {
       margin: 0;
 
-      label {
+      .MuiInputLabel-animated {
         color: #78b8db;
         font-size: 19px;
         position: relative;
       }
+
       .MuiInput-formControl {
         margin: 0 0 16px 0;
+
+        .MuiSelect-icon {
+          color: wheat;
+        }
       }
 
       .MuiSelect-select.MuiSelect-select {
@@ -176,8 +181,4 @@ code {
   .MuiLinearProgress-colorPrimary {
     margin: 2px 0;
   }
-}
-
-.active {
-  color: orange !important;
 }
