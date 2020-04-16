@@ -2,10 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchAllImages } from '../../actions';
 import Select from './Select';
+import SearchForm from './SearchForm';
 
 function Categories({ fetchAllImages }) {
   return (
     <div className='categories'>
+      <SearchForm />
+
       <p
         onClick={() =>
           fetchAllImages(
@@ -17,8 +20,6 @@ function Categories({ fetchAllImages }) {
         Popular
       </p>
 
-      <Select />
-
       <p
         onClick={() =>
           fetchAllImages(
@@ -29,6 +30,8 @@ function Categories({ fetchAllImages }) {
       >
         Latest
       </p>
+
+      <Select />
     </div>
   );
 }

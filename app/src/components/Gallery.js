@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ImageCard from './ImageCard';
-import SearchForm from './SearchForm';
 import Categories from './Categories/Categories';
 
 function Gallery({ images, error }) {
@@ -9,8 +8,6 @@ function Gallery({ images, error }) {
     <p style={{ textAlign: 'center', color: 'red' }}>{error}</p>
   ) : (
     <>
-      <SearchForm />
-
       <Categories />
 
       <div className='gallery'>

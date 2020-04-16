@@ -40,52 +40,49 @@ code {
     }
   }
 
-  form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(15, 20, 22);
-    padding: 15px 0;
-    border-bottom: 1px solid rgb(54, 54, 54);
-
-    button {
-      background: inherit;
-      outline: none;
-      border: none;
-      font-size: 25px;
-      cursor: pointer;
-      margin-right: 3px;
-      transition-duration: 0.4s;
-      border-radius: 15px;
-      background-color: rgb(77, 75, 75);
-      padding: 1px 15px;
-    }
-
-    input {
-      font-size: 22px;
-      outline: none;
-      background: inherit;
-      border: none;
-      border-bottom: 1px solid #f7f7f7;
-      color: gold;
-      letter-spacing: 0.5px;
-      padding: 2px 5px;
-      margin-right: 10px;
-    }
-  }
-
   .categories {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
     background-color: lighten($color: rgb(15, 20, 22), $amount: 5);
+
+    form {
+      display: flex;
+      padding: 15px 0;
+
+      button {
+        background: inherit;
+        outline: none;
+        border: none;
+        font-size: 25px;
+        cursor: pointer;
+        margin-right: 5px;
+        transition-duration: 0.4s;
+        border-radius: 15px;
+        background-color: rgb(77, 75, 75);
+        padding: 1px 15px;
+      }
+
+      input {
+        width: 150px;
+        font-size: 22px;
+        outline: none;
+        background: inherit;
+        border: none;
+        border-bottom: 1px solid #f7f7f7;
+        color: gold;
+        letter-spacing: 0.5px;
+        padding: 2px 5px;
+      }
+    }
 
     p {
       font-size: 22px;
       color: #b3b0b0;
       cursor: pointer;
       transition-duration: 0.4s;
+      margin: 0 5px;
 
       &:hover {
         color: #f7f7f7;

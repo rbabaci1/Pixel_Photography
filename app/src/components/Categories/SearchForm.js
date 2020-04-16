@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { fetchAllImages } from '../actions';
+import { fetchAllImages } from '../../actions';
 
 function SearchForm({ fetchAllImages, loading }) {
   const [searchTerm, setSearchTerm] = useState('');
