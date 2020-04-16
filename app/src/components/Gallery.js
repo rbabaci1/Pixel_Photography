@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ImageCard from './ImageCard';
 import Categories from './Categories/Categories';
+import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
 
 function Gallery({ images, error }) {
   return error ? (
@@ -9,6 +10,8 @@ function Gallery({ images, error }) {
   ) : (
     <>
       <Categories />
+
+      <DoubleArrowIcon id='arrow-icon' />
 
       <div className='gallery'>
         {images.map((image) => (
