@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { fetchAllImages } from '../../actions';
+import { fetchAllImages, updateSearchTerm } from '../../actions';
 
-function SearchForm({ fetchAllImages, loading }) {
-  const [searchTerm, setSearchTerm] = useState('');
-
+function SearchForm({ fetchAllImages, loading, searchTerm, updateSearchTerm }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -13,7 +11,6 @@ function SearchForm({ fetchAllImages, loading }) {
       `https://pixabay.com/api/?key=14685436-4a2efb015ccaa4b983c6b66ae&per_page=200&page=1&q=${searchTerm}`,
       1000
     );
-    setSearchTerm('');
   };
 
   return (
@@ -28,7 +25,7 @@ function SearchForm({ fetchAllImages, loading }) {
         <input
           type='text'
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={(e) => updateSearchTerm(e.target.value)}
           disabled={loading}
           placeholder='...Search'
           required
@@ -40,6 +37,8 @@ function SearchForm({ fetchAllImages, loading }) {
   );
 }
 
-const mapStateToProps = ({ loading }) => ({ loading });
+const mapStateToProps = ({ loading, searchTerm }) => ({ loading, searchTerm });
 
-export default connect(mapStateToProps, { fetchAllImages })(SearchForm);
+export default connect(mapStateToProps, { fetchAllImages, updateSearchTerm })(
+  SearchForm
+);

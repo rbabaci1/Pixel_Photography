@@ -20,7 +20,7 @@ function Categories({ fetchAllImages }) {
             0
           );
         }}
-        className={order === 'popular' && 'active'}
+        className={order === 'popular' ? 'active' : undefined}
       >
         Popular
       </p>
@@ -34,7 +34,7 @@ function Categories({ fetchAllImages }) {
             0
           );
         }}
-        className={order === 'latest' && 'active'}
+        className={order === 'latest' ? 'active' : undefined}
       >
         Latest
       </p>

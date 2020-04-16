@@ -22,21 +22,21 @@ function SimpleSelect({ fetchAllImages }) {
   const [category, setCategory] = useState('');
 
   useEffect(() => {
-    fetchAllImages(
-      `https://pixabay.com/api/?key=14685436-4a2efb015ccaa4b983c6b66ae&per_page=200&page=1&category=${category}`,
-      0
-    );
+    if (category) {
+      fetchAllImages(
+        `https://pixabay.com/api/?key=14685436-4a2efb015ccaa4b983c6b66ae&per_page=200&page=1&category=${category}`,
+        0
+      );
+    }
   }, [category, fetchAllImages]);
 
-  const handleChange = (event) => {
-    setCategory(event.target.value);
-  };
+  const handleChange = (event) => setCategory(event.target.value);
 
   return (
     <FormControl className={classes.formControl} id='select-form-control'>
       <InputLabel id='demo-simple-select-helper-label'>Category</InputLabel>
 
-      <Select value={category} onChange={handleChange} id='test'>
+      <Select onChange={handleChange}>
         <MenuItem disabled>Select a category</MenuItem>
         <MenuItem value='backgrounds'>Backgrounds</MenuItem>
         <MenuItem value='fashion'>Fashion</MenuItem>

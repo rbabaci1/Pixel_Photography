@@ -10,13 +10,7 @@ function Gallery({ images, error }) {
   ) : (
     <>
       <Categories />
-
-      <DoubleArrowIcon
-        id='arrow-icon'
-        onClick={() => {
-          window.scrollTo(0, 0);
-        }}
-      />
+      <DoubleArrowIcon id='arrow-icon' onClick={() => window.scrollTo(0, 0)} />
 
       <div className='gallery'>
         {images.map((image) => (
