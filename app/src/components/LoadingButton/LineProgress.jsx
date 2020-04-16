@@ -5,6 +5,7 @@ import { LinearProgress } from '@material-ui/core';
 class ColoredLinearProgress extends Component {
   render() {
     const { classes } = this.props;
+
     return (
       <>
         <LinearProgress

@@ -40,9 +40,6 @@ function SearchForm({ fetchAllImages, loading }) {
   );
 }
 
-export default connect(
-  ({ loading }) => ({
-    loading,
-  }),
-  { fetchAllImages }
-)(SearchForm);
+const mapStateToProps = ({ loading }) => ({ loading });
+
+export default connect(mapStateToProps, { fetchAllImages })(SearchForm);

@@ -15,6 +15,74 @@ code {
 .App {
   height: 100vh;
 
+  .header {
+    height: 15vh;
+    background-image: url('https://cdn.pixabay.com/photo/2018/07/09/16/59/clouds-3526558__340.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    h1 {
+      margin: 0;
+      padding: 15px 0;
+      text-align: center;
+      font-size: 52px;
+      font-family: cursive;
+      background-color: rgba(158, 97, 57, 0.3);
+      height: 100%;
+    }
+    h3 {
+      position: fixed;
+      color: #fff;
+      margin: 0;
+      top: 35px;
+      font-weight: 400;
+      background-color: rgba(114, 113, 113, 0.5);
+      padding: 7px 10px;
+      font-size: 20px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      cursor: pointer;
+      transition-duration: 0.5s;
+
+      &:hover {
+        background: rgb(49, 49, 49);
+        padding: 7px 18px;
+      }
+    }
+  }
+
+  .home {
+    height: 85vh;
+    border: 1px solid;
+    box-sizing: border-box;
+    background-image: url('https://cdn.pixabay.com/photo/2016/09/14/08/18/film-1668918_960_720.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .show-all {
+      text-align: center;
+      margin-top: 20px;
+
+      a {
+        text-decoration: none;
+      }
+
+      button {
+        font-size: 18px;
+        padding: 3px 20px;
+        margin-top: 10px;
+        cursor: pointer;
+        outline: none;
+        color: rgb(78, 76, 76);
+      }
+    }
+
+    .MuiLinearProgress-colorPrimary {
+      margin: 2px 0;
+    }
+  }
+
   .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -28,7 +96,7 @@ code {
       img {
         width: 445px;
         height: 300px;
-        border-radius: 10px;
+        border-radius: 2px;
         transition-duration: 0.3s;
 
         &:hover {
@@ -91,6 +159,7 @@ code {
   }
 }
 
+// select dropdown
 #select-form-control {
   margin: 0;
 
@@ -112,70 +181,7 @@ code {
   }
 }
 
-.header {
-  height: 15vh;
-  background-image: url('https://cdn.pixabay.com/photo/2018/07/09/16/59/clouds-3526558__340.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  h1 {
-    margin: 0;
-    padding: 15px 0;
-    text-align: center;
-    font-size: 52px;
-    font-family: cursive;
-    background-color: rgba(158, 97, 57, 0.3);
-    height: 100%;
-  }
-  h3 {
-    position: fixed;
-    color: #fff;
-    margin: 0;
-    top: 35px;
-    font-weight: 400;
-    background-color: rgba(114, 113, 113, 0.5);
-    padding: 7px 10px;
-    font-size: 20px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    cursor: pointer;
-    transition-duration: 0.5s;
-
-    &:hover {
-      background: rgb(49, 49, 49);
-      padding: 7px 18px;
-    }
-  }
-}
-
-.home {
-  height: 85vh;
-  border: 1px solid;
-  box-sizing: border-box;
-  background-image: url('https://cdn.pixabay.com/photo/2016/09/14/08/18/film-1668918_960_720.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  .show-all {
-    text-align: center;
-    margin-top: 20px;
-
-    a {
-      text-decoration: none;
-    }
-
-    button {
-      font-size: 18px;
-      padding: 3px 20px;
-      margin-top: 10px;
-      cursor: pointer;
-      outline: none;
-      color: rgb(78, 76, 76);
-    }
-  }
-
-  .MuiLinearProgress-colorPrimary {
-    margin: 2px 0;
-  }
+.active {
+  border-bottom: 1px solid orange;
+  padding-bottom: 2px;
 }

@@ -19,9 +19,6 @@ function Gallery({ images, error }) {
   );
 }
 
-const mapStateToProps = ({ images, error }) => ({
-  images,
-  error,
-});
+const mapStateToProps = ({ images, error }) => ({ images, error });
 
 export default connect(mapStateToProps)(Gallery);

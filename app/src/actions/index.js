@@ -4,7 +4,7 @@ export const LOADING = 'LOADING';
 export const SUCCESS = 'SUCCESS';
 export const ERROR = 'ERROR';
 
-export const fetchAllImages = (url, time) => (dispatch) => {
+export const fetchAllImages = (url, waitTime) => (dispatch) => {
   dispatch({
     type: LOADING,
   });
@@ -19,7 +19,7 @@ export const fetchAllImages = (url, time) => (dispatch) => {
           type: SUCCESS,
           payload: cleanedData,
         });
-      }, time);
+      }, waitTime);
     })
     .catch((err) => {
       dispatch({
