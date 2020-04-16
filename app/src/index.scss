@@ -88,30 +88,27 @@ code {
         color: #f7f7f7;
       }
     }
+  }
+}
 
-    // Select style
-    .makeStyles-formControl-1 {
-      margin: 0;
+#select-form-control {
+  margin: 0;
 
-      .MuiInputLabel-animated {
-        color: #78b8db;
-        font-size: 19px;
-        position: relative;
-      }
+  #demo-simple-select-helper-label {
+    color: #78b8db;
+    font-size: 19px;
+    position: relative;
+  }
+  .MuiInput-formControl {
+    margin: 0 0 16px 0;
 
-      .MuiInput-formControl {
-        margin: 0 0 16px 0;
-
-        .MuiSelect-icon {
-          color: wheat;
-        }
-      }
-
-      .MuiSelect-select.MuiSelect-select {
-        border-bottom: 1px solid #fff;
-        color: wheat;
-      }
+    .MuiSelect-icon {
+      color: wheat;
     }
+  }
+  .MuiSelect-select.MuiSelect-select {
+    border-bottom: 1px solid #fff;
+    color: wheat;
   }
 }
 

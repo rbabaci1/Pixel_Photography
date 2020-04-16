@@ -33,10 +33,10 @@ function SimpleSelect({ fetchAllImages }) {
   };
 
   return (
-    <FormControl className={classes.formControl}>
+    <FormControl className={classes.formControl} id='select-form-control'>
       <InputLabel id='demo-simple-select-helper-label'>Category</InputLabel>
 
-      <Select value={category} onChange={handleChange}>
+      <Select value={category} onChange={handleChange} id='test'>
         <MenuItem disabled>Select a category</MenuItem>
         <MenuItem value='backgrounds'>Backgrounds</MenuItem>
         <MenuItem value='fashion'>Fashion</MenuItem>
