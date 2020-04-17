@@ -1,11 +1,12 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { CircularProgress, Button } from '@material-ui/core';
 import ColoredLinearProgress from './LineProgress';
 import { Link } from 'react-router-dom';
 import { fetchAllImages } from '../../actions';
 
-const LoadingButton = ({ loading, history, fetchAllImages }) => {
+const LoadingButton = ({ fetchAllImages, loading, history }) => {
   const handleClick = (e) => {
     e.preventDefault();
 
@@ -39,4 +40,6 @@ const LoadingButton = ({ loading, history, fetchAllImages }) => {
 
 const mapStateToProps = ({ loading }) => ({ loading });
 
-export default connect(mapStateToProps, { fetchAllImages })(LoadingButton);
+export default connect(mapStateToProps, { fetchAllImages })(
+  withRouter(LoadingButton)
+);
