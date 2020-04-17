@@ -30,7 +30,7 @@ const LoadingButton = ({ loading, history, fetchAllImages }) => {
           }
         >
           {loading && <CircularProgress size={14} />}
-          {!loading && 'Show All'}
+          {!loading && 'Shop for free!'}
         </Button>
       </Link>
     </>
