@@ -1,3 +1,5 @@
+Pixel Photography is a platform that hots free high quality images. Powered by Pixabay API.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
