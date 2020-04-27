@@ -1,4 +1,9 @@
-## Pixel Photography is a platform that hots free high quality images. Powered by Pixabay API.
+## About Pixel Photography:
+A vibrant community of creatives, sharing copyright free images. All contents are released under the Pixabay License, which makes them safe to use without asking for permission or giving credit to the artist - even for commercial purposes.
+
+## Used Technologies:
+JavaScript, React, Redux, React-router, axios, Html/Css, Sass, Figma, Material UI.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
